@@ -1,0 +1,10 @@
+# files
+.Rhistory
+*.Rproj
+.DS_Store
+session.txt
+
+# folders
+.Rproj.user
+data/
+out/
