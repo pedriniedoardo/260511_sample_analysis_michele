@@ -124,6 +124,11 @@ for (m in markers) {
 }
 corrected_markers <- corrected[, markers]
 
+# save the table to share with michele
+corrected_markers %>%
+  rownames_to_column("patient_id") %>%
+  write_tsv("out/table/corrected_markers.tsv")
+
 # 4. PCA on age-corrected markers -------------------------------------------
 pca_res <- prcomp(corrected_markers, center = TRUE, scale. = TRUE)
 var_exp <- pca_res$sdev^2 / sum(pca_res$sdev^2)
